@@ -1,0 +1,12 @@
+services:
+  pinterest-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pinterest-dl-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    # Jika Anda memiliki cookies.json untuk pin/board privat, uncomment baris volume di bawah:
+    # volumes:
+    #   - ./cookies.json:/app/cookies.json:ro
